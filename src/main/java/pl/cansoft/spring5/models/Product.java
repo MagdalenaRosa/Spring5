@@ -38,4 +38,5 @@ public class Product {
 
     @NotNull(message = "Cena jest wymagana")
     private BigDecimal price;
+
 }

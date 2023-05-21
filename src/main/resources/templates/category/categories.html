@@ -10,7 +10,11 @@
 <ul>
     <li th:each="category : ${db}">
         <a th:href="'/categoryDetails/' + ${category.getId()}" th:text="${category.getName()}"></a>
+<<<<<<< HEAD
         <a th:href="'/removeCategory/' + ${category.getId()}">[remove]</a>
+=======
+        <a th:href="'/removeCategory/' + ${category.getId()}">❌</a>
+>>>>>>> 76f8b58 (relations)
         <a th:href="'/editCategory/' + ${category.getId()}">[edit]</a>
     </li>
 </ul>
