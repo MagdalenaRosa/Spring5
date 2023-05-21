@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/main-menu}"></div>
+
+<h1 th:text="${product.getName()}"></h1>
+<p th:text="${product.getId()}"></p>
+<p th:text="${product.getDesc()}"></p>
+<p>
+    <img alt="" th:src="${product.getImgUri()}" width="100"/>
+</p>
+</body>
+</html>

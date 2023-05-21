@@ -1,0 +1,15 @@
+<hr/>
+
+<ul>
+    <li th:each="error : ${errors}" th:text="${error}"></li>
+</ul>
+
+<form method="post" th:action="${actionUri}">
+    <input name="name" placeholder="Category name"
+           th:value="${ category != null ? category.getName() : '' }"/>
+    <input name="desc" placeholder="Category desc"
+           th:value="${ category != null ? category.getDesc() : ''}"/>
+    <input name="imgUri" placeholder="Category img"
+           th:value="${ category != null ? category.getImgUri() : '' }"/>
+    <button>Save</button>
+</form>

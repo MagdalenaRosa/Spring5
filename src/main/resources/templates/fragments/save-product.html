@@ -1,0 +1,17 @@
+<hr/>
+
+<ul>
+    <li th:each="error : ${errors}" th:text="${error}"></li>
+</ul>
+
+<form method="post" th:action="${actionUri}">
+    <input name="name" placeholder="Product name"
+           th:value="${ product != null ? product.getName() : '' }"/>
+    <input name="price" placeholder="Product price"
+           th:value="${ product != null ? product.getPrice() : '' }" type="number"/>
+    <input name="imgUri" placeholder="Product img"
+           th:value="${ product != null ? product.getImgUri() : '' }"/>
+    <textarea name="desc" placeholder="Product desc" rows="5"
+              th:text="${ product != null ? product.getDesc() : '' }"></textarea>
+    <button>Save</button>
+</form>
