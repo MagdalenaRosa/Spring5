@@ -8,6 +8,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,5 +39,4 @@ public class Product {
 
     @NotNull(message = "Cena jest wymagana")
     private BigDecimal price;
-
 }

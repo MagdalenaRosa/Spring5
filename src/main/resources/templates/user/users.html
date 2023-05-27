@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/main-menu}"></div>
+<h1>All users</h1>
+
+<div th:each="user : ${users}">
+    <div>
+        Id: <span th:text="${user.getUserId()}"></span>
+    </div>
+    <div>
+        FirstName:<span th:text="${user.getFirstName()}"></span>
+    </div>
+    <div>
+        LastName: <span th:text="${user.getLastName()}"></span>
+    </div>
+    <a th:href="${ '/user/id/' + user.getUserId() }">[show more]</a>
+    <hr/>
+</div>
+
+</body>
+</html>

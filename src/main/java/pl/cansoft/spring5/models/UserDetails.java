@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

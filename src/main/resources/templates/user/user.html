@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/main-menu}"></div>
+<h1>User</h1>
+
+<div>
+    <div>
+        Id: <span th:text="${user.getUserId()}"></span>
+    </div>
+    <div>
+        FirstName:<span th:text="${user.getFirstName()}"></span>
+    </div>
+    <div>
+        LastName: <span th:text="${user.getLastName()}"></span>
+    </div>
+    <div>
+        Email: <span th:text="${user.getEmail()}"></span>
+    </div>
+    <div th:if="${user.getDetails() != null}">
+        PersonalNumber: <span th:text="${user.getDetails().getPersonalNumber()}"></span>
+    </div>
+    <div th:if="${user.getDetails() != null}">
+        TaxNumber: <span th:text="${user.getDetails().getTaxNumber()}"></span>
+    </div>
+    <p>Phones:</p>
+    <ul>
+        <li th:each="phone : ${user.getPhoneNumber()}">
+            <span th:text="${phone.getPrefix() + ' ' + phone.getNumber()}"></span>
+        </li>
+    </ul>
+    <p>Addresses:</p>
+    <ul>
+        <li th:each="address : ${user.getAddress()}">
+            <span th:text="${address.getCity() + ', ' + address.getStreet()}"></span>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

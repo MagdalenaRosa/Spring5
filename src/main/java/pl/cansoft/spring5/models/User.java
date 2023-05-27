@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.List;
 
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +18,9 @@ public class User {
     private Integer userId; // PK
     private String firstName;
     private String lastName;
+    @Column(unique = true)
+    private String email;
+    private String password;
     @OneToOne // OneToOne (o2o) - 1 do 1 -> @OneToOne
     @JoinColumn(name = "detailId")
     private UserDetails details;
@@ -31,7 +35,3 @@ public class User {
     )
     private List<Address> address;
 }
-
-
-
-

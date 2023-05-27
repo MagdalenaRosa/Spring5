@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,4 +20,3 @@ public class PhoneNumber {
     private String prefix;
     private String number;
 }
-
